@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+    <link rel="stylesheet" href="static/styles.css">
+
+</head>
+<body>
+    <h2>Enter Passenger Details</h2>
+    <form action="/predict" method="post">
+        <label for="Pclass">Pclass:</label>
+        <input type="number" name="Pclass" required><br>
+
+        <label for="Sex">Sex (male/female):</label>
+        <input type="text" name="Sex" required><br>
+
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" step="0.1" required><br>
+
+        <label for="SibSp">SibSp:</label>
+        <input type="number" name="SibSp" required><br>
+
+        <label for="Parch">Parch:</label>
+        <input type="number" name="Parch" required><br>
+
+        <label for="Fare">Fare:</label>
+        <input type="number" name="Fare" step="0.1" required><br>
+
+        <label for="Embarked">Embarked (C/Q/S):</label>
+        <input type="text" name="Embarked" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
